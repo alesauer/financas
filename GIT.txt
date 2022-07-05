@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+git token: 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 
+
+=======
+10/06-22
+git token: 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
+
+git init → inicia repositório
+git config user.name “Sauer“ → Configura usuário
+git config user.email alesauer@gmail.com → Conf. senha
+git add –A → Adiciona Arquivos a área stage
+git commit -m "Comentario“ →Grava arquivos no Repositório
+git log → Verifica os últimos commits
+git status -> Verifica o status dos arquivos
+
+git push <nome repositório> <branch> -> Enviar dados para repositório remoto
+    git push https://github.com/alesauer/financeiro.git master
+<<<<<<< HEAD
+git clone <endereço do repositorio> -> Clonar repositório remoto
+
+git config --global http.proxy http://proxy.almg.uucp:3128
+git config --global http.proxy http://proxy.almg.uucp:3128
+git config --global --unset http.proxy
+git config --global credential.helper cache
+
+git clone <endereço do repositorio> -> Clonar repositório remotogit config --global http.proxy http://proxy.almg.uucp:3128
+git config --global http.proxy http://proxy.almg.uucp:3128
+git config --global --unset http.proxy
+git config --global credential.helper cache
+sauewr
+
+
+//Mysql
+CREATE USER 'financeiro'@'localhost' IDENTIFIED BY '****';
+GRANT ALL PRIVILEGES ON * . * TO 'financeiro'@'localhost';
+>>>>>>> 986ff8c13c9d19381c8c41a85e40f72202ca9395
