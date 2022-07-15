@@ -1,5 +1,3 @@
-
-
 Install:
 1: Descompactar o código na raiz do servidor web (www) e verificar se a tela de logon aparece:
     --> http://127.0.0.1/financas
@@ -7,7 +5,5 @@ Install:
 
 3: Logar na interface: http://localhost/financas
     --> Utilize o usuário admin/admin para entrar na interface
-
-07/2022
 
 

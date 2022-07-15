@@ -294,6 +294,23 @@ if (isset($_REQUEST["situacao_add"]) == "1")
     </label>
 
 
+  <fieldset>
+    <!-- Exemplo com Radio button -->
+    <div class="ls-label col-md-5">
+      <p><b>Tipo de entrada:</b></p>
+      <label class="ls-label-text">
+        <input type="radio" name="parcelamento">
+        Parcelamento
+      </label>
+      <label class="ls-label-text">
+        <input type="radio" name="recorrente">
+        Recorrente
+      </label>
+      </div>
+  </fieldset>
+
+
+
 
     
     <label class="ls-label col-md-3">
