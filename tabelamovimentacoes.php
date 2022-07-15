@@ -275,7 +275,7 @@ $Parcelamentos = number_format($obj_p->get_total_parcelamentos(), 2);
   <button type="button" class="ls-btn-primary">Receitas: R$ <?php echo "$Receita_screen";?></button>
   <button type="button" class="ls-btn-danger ls-active">Despesas: R$ <?php echo "$Despesas_screen";  ?></button>
   <button type="button" class="ls-btn-danger">Saldo: R$ <?php echo "$saldo_screen";?></button>
-  <button data-ls-module="modal" data-target="#parcelamentos" class="ls-btn-success">Parcelamentos: R$ <?php echo "$Parcelamentos";?></button>
+  <button data-ls-module="modal" data-target="#parcelamentos" class="ls-btn-success">Parcelamentos</button>
 </div>
 <br>
 
@@ -325,6 +325,11 @@ $p_valor = $obj_lp->get_lista_parcelamentos_valor();
                         echo "<tr><td><a href='' title=''>$p_mes</a></td>";
                         echo "<td class='hidden-xs'>R$ $p_valor</td></tr>";
                     }
+                    
+                    $obj_p1 = new Financeiro;
+                    $TotalParcelamentos = number_format($obj_p1->get_total_parcelamentos(), 2);
+                    echo "<tr><td><a href='' title=''><b>Total:</b></a></td>";
+                    echo "<td class='hidden-xs'><b>R$ $TotalParcelamentos</b></td></tr>";
             ?>  
         </tbody>
       </table>
@@ -376,6 +381,7 @@ $p_valor = $obj_lp->get_lista_parcelamentos_valor();
         {
             $objcc1 = new Financeiro;  
             $valorCC = $objcc1->get_saldo_pagamentos_credito($forma_pag_cc,$mesFiltro);
+            
         }
 
       echo "no cartão $forma_pagamento_cc: R$ $valorCC";?></h4>

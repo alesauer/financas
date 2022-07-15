@@ -82,7 +82,7 @@ if (isset($_REQUEST["clicouExcluiTodosCC"]) == "1")
 
     <main class="ls-main ">
       <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-stats">Cartão de Crédito <?php echo "$forma_pagamento";  ?> </h1>
+        <h1 class="ls-title-intro ls-ico-stats">Cartão de Crédito <?php echo "<b>$forma_pagamento</b>";  ?> </h1>
 
       
 <?php
@@ -100,7 +100,6 @@ if (isset($_REQUEST["situacao_edit"]) == "1"){
 ?>
 
 <div class="ls-box">
-
 
 
 <?php

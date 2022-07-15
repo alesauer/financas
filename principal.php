@@ -254,6 +254,7 @@ $p_valor = $obj_lp->get_lista_parcelamentos_valor();
 
 
 <!-- Parcelamentos -->
+<!--
 <div class="ls-box ls-board-box">
   <header class="ls-info-header">
     <h2 class="ls-title-3">Parcelamentos nos Cartões<?php //echo date("Y"); ?></h2>
@@ -332,6 +333,8 @@ $p_valor = $obj_lp->get_lista_parcelamentos_valor();
 </table>
 </div>
 </div>
+
+-->
 
 <!-- End Parcelamentos -->
 

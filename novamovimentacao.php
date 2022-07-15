@@ -21,7 +21,6 @@ include_once ("lib/database.php");
      
       <a href="#" class="ls-ico-question" data-ls-module="topbarCurtain" data-target="#ls-feedback-curtain"><span>Sugestões</span></a>
     </div>
-
  
  <?php include("modules/conta_user.php"); ?>
 
@@ -35,8 +34,7 @@ include_once ("lib/database.php");
         </a>
       </h1>
 
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
+<!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
 </div>
  
 
