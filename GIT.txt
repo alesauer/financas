@@ -5,6 +5,7 @@ git token: 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
 10/06-22
 git token: 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
 
+.
 git init → inicia repositório
 git config user.name “Sauer“ → Configura usuário
 git config user.email alesauer@gmail.com → Conf. senha
