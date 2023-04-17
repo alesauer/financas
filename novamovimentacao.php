@@ -79,7 +79,7 @@ if (isset($_REQUEST["situacao_add"]) == "1")
 
      <h2 class="ls-title-3">Registrar nova Receita</h2>
 
-    <form action="lib/insere_movimentacao.php" type="post" class="ls-form row">
+    <form action="lib/insere_movimentacao.php" type="post" autocomplete="off" class="ls-form row">
   <fieldset>
 
 
@@ -90,9 +90,12 @@ if (isset($_REQUEST["situacao_add"]) == "1")
       <input type="text" name="DESCRICAO" placeholder="Descrição da compra" required >
     </label>
 
+
+
+    
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Valor:</b>
-      <input type="text" name="VALOR" placeholder="R$ 0,00" class="ls-mask-money" required >
+      <input type="text" name="VALOR" placeholder="R$ 0000,00" id="currency" required >
     </label>
 
 
@@ -117,15 +120,15 @@ if (isset($_REQUEST["situacao_add"]) == "1")
 
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Data Pagamento:</b>
-      <input type="text" name="DATA_PAGAMENTO" class="datepicker" id="datepickerExample"  placeholder="dd/mm/aaaa">
+      <input type="text" name="DATA_PAGAMENTO" class="datepicker" id="datepickerExample"  placeholder="dd/mm/aaaa" required >
     </label>
 
 
     <label class="ls-label col-md-3">
-      <b class="ls-label-text">Forma de Pagamento:</b>
+      <b class="ls-label-text">Forma de Recebimento:</b>
       <div class="ls-custom-select">
         <select name="FORMA_PAGAMENTO" class="ls-select">
-          <option>Depósito em Conta Corente </option>
+          <option>Depósito em Conta</option>
           <option>Outros</option>
         </select>
       </div>
@@ -194,7 +197,7 @@ if (isset($_REQUEST["situacao_add"]) == "1")
 
      <h2 class="ls-title-3">Registrar nova Despesa</h2>
 
-    <form action="lib/insere_movimentacao.php" type="post" class="ls-form row">
+    <form action="lib/insere_movimentacao.php" type="post" autocomplete="off" class="ls-form row">
   <fieldset>
 
 
@@ -205,10 +208,24 @@ if (isset($_REQUEST["situacao_add"]) == "1")
       <input type="text" name="DESCRICAO" placeholder="Descrição da compra" required >
     </label>
 
+
+    <!--
     <label class="ls-label col-md-3">
       <b class="ls-label-text">Valor:</b>
       <input type="text" name="VALOR" placeholder="R$ 1000.00" class="ls-mask-money" required >
     </label>
+    -->
+
+
+
+
+    <label class="ls-label col-md-3">
+      <b class="ls-label-text">Valor:</b>
+      <input type="text" name="VALOR" placeholder="R$ 0000,00" id="currency_despesa" required >
+    </label>
+
+
+
 
 
     <label class="ls-label col-md-3">
@@ -303,7 +320,7 @@ if (isset($_REQUEST["situacao_add"]) == "1")
         Parcelamento
       </label>
       <label class="ls-label-text">
-        <input type="radio" name="recorrente">
+        <input type="radio" name="parcelamento">
         Recorrente
       </label>
       </div>
@@ -324,12 +341,8 @@ if (isset($_REQUEST["situacao_add"]) == "1")
     </label>
 
   
-
-
-
   <input type="submit" value="Cadastrar" class="ls-btn-primary ls-btn-sm">  
   <a href="tabelamovimentacoes.php?mesFiltro=<?php $mesNum = date("m"); echo $mesNum;?>" class="ls-btn-dark ls-btn-sm" role="button" aria-pressed="true">Cancelar</a>
-  
 
 </form>
 

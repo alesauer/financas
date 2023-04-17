@@ -73,7 +73,8 @@ $idFINANCAS = $_REQUEST['idFINANCAS'];
     $idFINANCAS = $linha['idFINANCAS'];
     $tipo=$linha['TIPO'];
     $descricao=$linha['DESCRICAO'];
-    $valor=number_format($linha['VALOR'],2,",",".");
+    //$valor=number_format($linha['VALOR'],2,",",".");
+    $valor=$linha['VALOR'];
     $categoria=$linha['CATEGORIA'];
     $data_pagamento=$linha['DATA_PAGAMENTO'];
     $data_vencimento=$linha['DATA_VENCIMENTO'];
@@ -82,11 +83,13 @@ $idFINANCAS = $_REQUEST['idFINANCAS'];
     $parcela=$linha['PARCELA'];
     $parcelado=$linha['PARCELADO'];
     $situacao=$linha['SITUACAO'];
+
+    
   }  
 
 ?>
 
-<form action="lib/edita_movimentacao.php" type="post" class="ls-form row">
+<form action="lib/edita_movimentacao.php" autocomplete="off" type="post" class="ls-form row">
 
 <input type='text' name='idFINANCAS' value='<?php echo $idFINANCAS;?>' hidden>
 
@@ -110,8 +113,8 @@ $idFINANCAS = $_REQUEST['idFINANCAS'];
     
 
     <label class='ls-label col-md-5'>
-      <b class='ls-label-text'>Valor (2222.34)</b>
-      <input type='text' name='VALOR' value='<?php echo $valor;?>' required >
+      <b class='ls-label-text'>Valor</b>
+      <input type='text' name='VALOR' value='<?php echo $valor;?>' id='currency' required >
     </label>
 
     <label class='ls-label col-md-5'>
@@ -150,7 +153,29 @@ $idFINANCAS = $_REQUEST['idFINANCAS'];
     
     <label class='ls-label col-md-5'>
       <b class='ls-label-text'>Forma de Pagamento</b>
-      <input type='text' name='FORMA_PAGAMENTO' value='<?php echo $forma_pagamento;?>' required >
+      
+
+      <div class="ls-custom-select">
+      <select name="FORMA_PAGAMENTO" class="ls-select" required>
+     
+      <?php
+   
+      if($tipo=="Receitas"){
+        echo" <option>$forma_pagamento</option>
+              <option>Depósito em Conta</option>
+              <option>Outros</option>";        
+      }else{
+        $obj = new Financeiro;
+        $forma_pagamento_get = $obj->get_forma_pagamentos();
+        echo " <option>$forma_pagamento</option>";
+        foreach($forma_pagamento_get as $f_pag)
+        {
+            echo "<option>$f_pag</option>";
+        }
+      }
+      ?>  
+     </select>
+     </div>
     </label>
    
 

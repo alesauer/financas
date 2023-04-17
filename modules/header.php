@@ -7,4 +7,9 @@
     <link href="stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="images/ico-boilerplate.png">
+
+    <script src="javascripts/jquery-2.1.0.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.maskMoney.min.js" type="text/javascript"></script>
+  
+
 </head>

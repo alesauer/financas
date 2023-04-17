@@ -4,7 +4,7 @@
   include ("verip.php");
  include ("crypt.php");
 
-$senha_login = "123";
+$senha_login = "GxgLTr2010";
 
 
 $senha_login=md5($senha_login);

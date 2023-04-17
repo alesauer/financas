@@ -3,4 +3,4 @@
 mysqldump -u financeiro -pGxgLTr201@ --databases financas  > sql/financas.sql
 git add -A
 git commit -m "$1"
-git push https://alesauer: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@github.com/alesauer/financas.git master
+git push https://alesauer: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@github.com/alesauer/financas.git master

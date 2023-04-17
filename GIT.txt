@@ -29,6 +29,7 @@ git config --global --unset http.proxy
 git config --global credential.helper cache
 sauewr
 
+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
 
 //Mysql
 CREATE USER 'financeiro'@'localhost' IDENTIFIED BY '****';

@@ -18,17 +18,12 @@ $TIPO = $_REQUEST["TIPO"];
 if($TIPO == "Despesas")
 {
 
-/*
-$obj_datas = new Datas;
-$dia=$obj_datas->get_dia();
-$mes=$obj_datas->get_mes();
-$ano=$obj_datas->get_ano();
-*/
-
 $DESCRICAO = $_REQUEST["DESCRICAO"];
-$VALOR = $_REQUEST["VALOR"];   $VALOR = str_replace(",",".", $VALOR);
-$CATEGORIA = $_REQUEST["CATEGORIA"];
+$VALOR = $_REQUEST["VALOR"];
+$VALOR = trim(str_replace("R$","", $VALOR));
+$VALOR = trim(str_replace(",",".", $VALOR));
 
+$CATEGORIA = $_REQUEST["CATEGORIA"];
 
 $DATA_VENCIMENTO = $_REQUEST["DATA_VENCIMENTO"];
 $aux1 = explode("/", $DATA_VENCIMENTO);
@@ -62,8 +57,6 @@ $SITUACAO = $_REQUEST["SITUACAO"];
 $obj= new Database;
 
 
-
-
 for($i=1; $i<=$PARCELA;$i++)
 {
 
@@ -87,7 +80,6 @@ for($i=1; $i<=$PARCELA;$i++)
 			$DATA_VENCIMENTO = $DATA_VENCIMENTO_FORMATADA;
 		}
 
-
 	$resultado = $obj->connect("INSERT INTO movimentacoes (TIPO, DESCRICAO, VALOR, CATEGORIA, DATA_VENCIMENTO, FORMA_PAGAMENTO,CONTA, PARCELA, PARCELADO, SITUACAO,USOU_CC)
 	VALUES ('$TIPO', '$DESCRICAO ($i/$PARCELA)', '$VALOR', '$CATEGORIA', '$DATA_VENCIMENTO', '$FORMA_PAGAMENTO','$CONTA', '$PARCELA', '$PARCELADO', '$SITUACAO','$USOU_CC')");
 }
@@ -102,7 +94,11 @@ else if($TIPO == "Receitas")
 
 	
 	$DESCRICAO = $_REQUEST["DESCRICAO"];
-	$VALOR = $_REQUEST["VALOR"];   $VALOR = str_replace(",",".", $VALOR);
+	$VALOR = $_REQUEST["VALOR"]; 
+	$VALOR = trim(str_replace("R$","", $VALOR));
+	$VALOR = trim(str_replace(",",".", $VALOR));
+
+
 	$CATEGORIA = $_REQUEST["CATEGORIA"];
 	$DATA_PAGAMENTO = $_REQUEST["DATA_PAGAMENTO"];
 	$aux = explode("/", $DATA_PAGAMENTO);

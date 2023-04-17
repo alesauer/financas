@@ -9,7 +9,7 @@
            </li>
 
            
-           <li><a href="pesquisa.php?mesFiltro=<?php $mesNum = date("m"); echo $mesNum;?>" class="ls-ico-search" title="Dashboard">Pesquisa</a></li>
+        
            
            <li>
             <a href="#" class="ls-ico-cog" title="Configurações">Configurações</a>

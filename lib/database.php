@@ -81,9 +81,13 @@ class Financeiro{
             $i++;   
         }
 
-       
+        if(!isset($p_mes)){
+            $p_mes=0;
+        }
+
         return $p_mes;
     }
+
 
     function get_lista_parcelamentos_valor()
     {
@@ -95,6 +99,9 @@ class Financeiro{
             //$Receita = number_format($linha['Receita'],2,",",".");   
             $p_valor[$i] = $linha['VALOR'];
             $i++;   
+        }
+        if(!isset($p_valor)){
+            $p_valor=0;
         }
         return $p_valor;
     }
@@ -261,10 +268,11 @@ class Financeiro{
         // pega a data de fechamento de um cartao de credito passado
         $obj = new Database;
         $result = $obj->connect("SELECT DIA_FECHAMENTO_FATURA_CC from forma_pagamento WHERE forma_pagamento = '$forma_pag_cc'");
-
+        
         while($linha=mysqli_fetch_array($result)) {
            $dia_fechamento_cc = $linha['DIA_FECHAMENTO_FATURA_CC'];
         }
+
         return($dia_fechamento_cc);
         exit;
     }
